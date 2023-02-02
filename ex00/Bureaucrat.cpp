@@ -1,7 +1,12 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string title, int level): name(title)  {
-	grade = level;
+	if (level < TOP_GRADE)
+		throw GradeTooHighException();
+	if (level > LOWEST_GRADE)
+		throw GradeTooLowException();
+	else
+		grade = level;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& toCopy): name(toCopy.name) {
