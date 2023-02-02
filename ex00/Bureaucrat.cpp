@@ -20,6 +20,16 @@ int Bureaucrat::getGrade(void) const {
 	return (grade);
 }
 
-int Bureaucrat::incGrade(void) {
-	throw
+void Bureaucrat::incGrade(void) {
+	if (grade > TOP_GRADE)
+		grade--;
+	else
+		throw GradeTooHighException();
+}
+
+void Bureaucrat::decGrade(void) {
+	if (grade < LOWEST_GRADE)
+		grade++;
+	else
+		throw GradeTooLowException();
 }
