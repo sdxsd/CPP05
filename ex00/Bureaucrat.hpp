@@ -11,6 +11,8 @@ class Bureaucrat {
 		const std::string	name;
 		int					grade;
 	public:
+		class GradeTooHighException : std::exception  { std::string GradeTooHigh(void); };
+		class GradeTooLowException : std::exception  { std::string GradeTooLow(void); };
 		Bureaucrat(std::string title, int level);
 		Bureaucrat(const Bureaucrat& toCopy);
 		~Bureaucrat(void);
