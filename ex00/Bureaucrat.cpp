@@ -38,3 +38,11 @@ void Bureaucrat::decGrade(void) {
 	else
 		throw GradeTooLowException();
 }
+
+std::string Bureaucrat::GradeTooHighException::GradeTooHigh(void) {
+	return ("Computer says no.");
+}
+
+std::string Bureaucrat::GradeTooLowException::GradeTooLow(void) {
+	return ("You cannot be more worthless than you already are.");
+}
