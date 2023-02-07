@@ -56,5 +56,5 @@ void Bureaucrat::signForm(const std::string& formName, int reqGrade) const {
 	if (grade <= reqGrade)
 		std::cout << name << " signed " << formName << std::endl;
 	else if (grade > reqGrade)
-		std::cout << name << " couldn't sign " << formName << "because grade was too low." << std::endl;
+		std::cout << name << " couldn't sign " << formName << " because grade was too low." << std::endl;
 }
