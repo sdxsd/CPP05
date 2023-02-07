@@ -52,8 +52,9 @@ std::ostream&	operator<<(std::ostream& os, const Bureaucrat& toPrint) {
 	return (os);
 }
 
-void Bureaucrat::signForm(const std::string& formName) const {
-	std::cout << name << " signed form " << formName << std::endl;
-	// TODO:
-	// Check if form has been sucessfully signed. Needs if else condition.
+void Bureaucrat::signForm(const std::string& formName, int reqGrade) const {
+	if (grade <= reqGrade)
+		std::cout << name << " signed " << formName << std::endl;
+	else if (grade > reqGrade)
+		std::cout << name << " couldn't sign " << formName << "because grade was too low." << std::endl;
 }
