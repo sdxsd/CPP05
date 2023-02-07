@@ -10,6 +10,7 @@ class Form {
 		const int			reqExec;
 		bool				isSigned;
 	public:
+		Form(void);
 		Form(std::string name, int signReq, int execReq);
 		Form(const Form& toCopy);
 		~Form(void);
