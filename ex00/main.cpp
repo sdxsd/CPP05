@@ -8,8 +8,7 @@ int main(int argc, char *argv[]) {
 	}
 	try {
 		const Bureaucrat bob(argv[1], atoi(argv[2]));
-		std::cout << "Employee name: " << bob.getName() << std::endl;
-		std::cout << "Employee grade: " << bob.getGrade() << std::endl;
+		std::cout << bob << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << "Grade too high exception." << std::endl;
