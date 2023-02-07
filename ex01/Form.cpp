@@ -7,6 +7,10 @@ Form::Form(void):
 
 Form::Form(std::string name, int signReq, int execReq):
 	formName(name), reqSign(signReq), reqExec(execReq) {
+	if (signReq < TOP_GRADE)
+		throw GradeTooHighException();
+	if (signReq > LOWEST_GRADE)
+		throw GradeTooLowException();
 	isSigned = false;
 }
 
