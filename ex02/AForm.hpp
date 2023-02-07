@@ -8,8 +8,8 @@
 #include "Bureaucrat.hpp"
 
 class AForm {
-	private:
-		const std::string	formName;
+	protected:
+		const std::string		formName;
 		const int			reqSign;
 		const int			reqExec;
 		bool				isSigned;
