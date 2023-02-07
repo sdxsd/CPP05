@@ -54,4 +54,6 @@ std::ostream&	operator<<(std::ostream& os, const Bureaucrat& toPrint) {
 
 void Bureaucrat::signForm(const std::string& formName) const {
 	std::cout << name << " signed form " << formName << std::endl;
+	// TODO:
+	// Check if form has been sucessfully signed. Needs if else condition.
 }
