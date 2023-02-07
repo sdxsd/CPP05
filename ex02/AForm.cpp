@@ -1,11 +1,11 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form(void):
-	formName("defaultFormName"), reqSign(50), reqExec(10) {
+AForm::AForm(void):
+	formName("defaultAFormName"), reqSign(50), reqExec(10) {
 	isSigned = false;
 }
 
-Form::Form(std::string name, int signReq, int execReq):
+AForm::AForm(std::string name, int signReq, int execReq):
 	formName(name), reqSign(signReq), reqExec(execReq) {
 	if (signReq < TOP_GRADE)
 		throw GradeTooHighException();
@@ -14,37 +14,37 @@ Form::Form(std::string name, int signReq, int execReq):
 	isSigned = false;
 }
 
-Form::Form(const Form& toCopy):
+AForm::AForm(const AForm& toCopy):
 	formName(toCopy.getName()), reqSign(toCopy.getReqSign()), reqExec(toCopy.getReqExec()) {
 	isSigned = toCopy.getIsSigned();
 }
 
-Form::~Form(void) {
+AForm::~AForm(void) {
 	;
 }
 
-Form& Form::operator=(const Form& toCopy) {
+AForm& AForm::operator=(const AForm& toCopy) {
 	this->isSigned = toCopy.getIsSigned();
 	return (*this);
 }
 
-std::string Form::getName(void) const {
+std::string AForm::getName(void) const {
 	return (formName);
 };
 
-int Form::getReqSign(void) const {
+int AForm::getReqSign(void) const {
 	return (reqSign);
 }
 
-int Form::getReqExec(void) const {
+int AForm::getReqExec(void) const {
 	return (reqExec);
 }
 
-bool Form::getIsSigned(void) const {
+bool AForm::getIsSigned(void) const {
 	return (isSigned);
 }
 
-void Form::beSigned(const Bureaucrat& wagie) {
+void AForm::beSigned(const Bureaucrat& wagie) {
 	if (wagie.getGrade() <= reqSign) {
 		isSigned = true;
 		wagie.signForm(formName, reqSign);
@@ -55,10 +55,10 @@ void Form::beSigned(const Bureaucrat& wagie) {
 	}
 }
 
-std::string Form::GradeTooHighException::GradeTooHigh(void) {
-	return ("Form needs to be signed by someone.");
+std::string AForm::GradeTooHighException::GradeTooHigh(void) {
+	return ("AForm needs to be signed by someone.");
 }
 
-std::string Form::GradeTooLowException::GradeTooLow(void) {
-	return ("Form cannot be signed by anyone.");
+std::string AForm::GradeTooLowException::GradeTooLow(void) {
+	return ("AForm cannot be signed by anyone.");
 }
