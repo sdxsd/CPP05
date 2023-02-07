@@ -1,7 +1,11 @@
 #ifndef FORM_H
 #define FORM_H
 
+#define LOWEST_GRADE 150
+#define TOP_GRADE 1
+
 #include <iostream>
+#include "Bureaucrat.hpp"
 
 class Form {
 	private:
@@ -19,6 +23,7 @@ class Form {
 		int getReqSign(void) const;
 		int getReqExec(void) const;
 		bool getIsSigned(void) const;
+		void beSigned(const Bureaucrat& wagie);
 };
 
 #endif // FORM_H
