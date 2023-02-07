@@ -39,3 +39,14 @@ int Form::getReqExec(void) const {
 bool Form::getIsSigned(void) const {
 	return (isSigned);
 }
+
+void Form::beSigned(const Bureaucrat& wagie) {
+	if (wagie.getGrade() <= reqSign) {
+		isSigned = true;
+		wagie.signForm(formName);
+	}
+	else {
+		;
+		// Throw exception when I implement exceptions.
+	}
+}
