@@ -14,6 +14,14 @@ class Form {
 		const int			reqExec;
 		bool				isSigned;
 	public:
+		class GradeTooHighException : std::exception  {
+			public:
+				std::string GradeTooHigh(void);
+		};
+		class GradeTooLowException : std::exception  {
+			public:
+				std::string GradeTooLow(void);
+		};
 		Form(void);
 		Form(std::string name, int signReq, int execReq);
 		Form(const Form& toCopy);

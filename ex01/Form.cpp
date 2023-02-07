@@ -43,10 +43,10 @@ bool Form::getIsSigned(void) const {
 void Form::beSigned(const Bureaucrat& wagie) {
 	if (wagie.getGrade() <= reqSign) {
 		isSigned = true;
-		wagie.signForm(formName);
+		wagie.signForm(formName, reqSign);
 	}
 	else {
-		;
-		// Throw exception when I implement exceptions.
+		wagie.signForm(formName, reqSign);
+		throw GradeTooLowException();
 	}
 }
