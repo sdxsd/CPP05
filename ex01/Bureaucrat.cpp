@@ -51,3 +51,7 @@ std::ostream&	operator<<(std::ostream& os, const Bureaucrat& toPrint) {
 	os << toPrint.getName() << ", bureaucrat grade " << toPrint.getGrade();
 	return (os);
 }
+
+void Bureaucrat::signForm(const std::string& formName) const {
+	std::cout << name << " signed form " << formName << std::endl;
+}
