@@ -56,9 +56,9 @@ void Form::beSigned(const Bureaucrat& wagie) {
 }
 
 std::string Form::GradeTooHighException::GradeTooHigh(void) {
-	return ("You cannot be cooler than you are now.");
+	return ("Form needs to be signed by someone.");
 }
 
 std::string Form::GradeTooLowException::GradeTooLow(void) {
-	return ("You cannot be more foolish than you are now.");
+	return ("Form cannot be signed by anyone.");
 }
