@@ -46,3 +46,8 @@ std::string Bureaucrat::GradeTooHighException::GradeTooHigh(void) {
 std::string Bureaucrat::GradeTooLowException::GradeTooLow(void) {
 	return ("You cannot be more worthless than you already are.");
 }
+
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat& toPrint) {
+	os << toPrint.getName() << ", bureaucrat grade " << toPrint.getGrade();
+	return (os);
+}

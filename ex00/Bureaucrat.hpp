@@ -28,4 +28,6 @@ class Bureaucrat {
 		void		decGrade(void);
 };
 
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat& toPrint);
+
 #endif // BUREAUCRAT_H
