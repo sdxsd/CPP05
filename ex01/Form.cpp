@@ -54,3 +54,11 @@ void Form::beSigned(const Bureaucrat& wagie) {
 		throw GradeTooLowException();
 	}
 }
+
+std::string Form::GradeTooHighException::GradeTooHigh(void) {
+	return ("You cannot be cooler than you are now.");
+}
+
+std::string Form::GradeTooLowException::GradeTooLow(void) {
+	return ("You cannot be more foolish than you are now.");
+}
