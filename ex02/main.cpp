@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 		return (0);
 	}
 	try {
-		const Bureaucrat bob(argv[1], atoi(argv[2]));
+		const Bureaucrat bob(argv[1], std::stoi(argv[2]));
 		Form document("Treaty of the annexation of Belgium", 10, 50);
 		std::cout << bob << std::endl;
 		document.beSigned(bob);
@@ -21,11 +21,11 @@ int main(int argc, char *argv[]) {
 		std::cout << "Grade too low exception." << std::endl;
 		return (1);
 	}
-	catch (Form::GradeTooHighException& gthe) {
+	catch (AForm::GradeTooHighException& gthe) {
 		std::cout << "Grade too high exception (form)" << std::endl;
 		return (1);
 	}
-	catch (Form::GradeTooLowException& gtle) {
+	catch (AForm::GradeTooLowException& gtle) {
 		std::cout << "Grade too low exception (form)" << std::endl;
 		return (1);
 	}

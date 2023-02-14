@@ -25,7 +25,7 @@ class AForm {
 		AForm(void);
 		AForm(std::string name, int signReq, int execReq);
 		AForm(const AForm& toCopy);
-		~AForm(void);
+		virtual ~AForm(void) = 0;
 		AForm& operator=(const AForm& toCopy);
 		std::string getName(void) const;
 		int getReqSign(void) const;
