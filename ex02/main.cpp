@@ -8,10 +8,8 @@ int main(int argc, char *argv[]) {
 		return (0);
 	}
 	try {
-		const Bureaucrat bob(argv[1], std::stoi(argv[2]));
-		Form document("Treaty of the annexation of Belgium", 10, 50);
+		const Bureaucrat bob(argv[1], std::atoi(argv[2]));
 		std::cout << bob << std::endl;
-		document.beSigned(bob);
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << "Grade too high exception." << std::endl;

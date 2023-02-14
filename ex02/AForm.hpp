@@ -32,6 +32,7 @@ class AForm {
 		int getReqExec(void) const;
 		bool getIsSigned(void) const;
 		void beSigned(const Bureaucrat& wagie);
+		virtual void beExecuted(const Bureaucrat& wagie);
 };
 
 #endif // AFORM_H
