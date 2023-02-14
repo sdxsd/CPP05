@@ -25,14 +25,14 @@ class AForm {
 		AForm(void);
 		AForm(std::string name, int signReq, int execReq);
 		AForm(const AForm& toCopy);
-		virtual ~AForm(void) = 0;
+		virtual ~AForm(void);
 		AForm& operator=(const AForm& toCopy);
 		std::string getName(void) const;
 		int getReqSign(void) const;
 		int getReqExec(void) const;
 		bool getIsSigned(void) const;
 		void beSigned(const Bureaucrat& wagie);
-		virtual void beExecuted(const Bureaucrat& wagie);
+		virtual void beExecuted(Bureaucrat const& executor) = 0;
 };
 
 #endif // AFORM_H

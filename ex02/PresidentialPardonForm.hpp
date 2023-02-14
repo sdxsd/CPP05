@@ -9,7 +9,7 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm(const PresidentialPardonForm& toCopy);
 		~PresidentialPardonForm(void);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& toCopy);
-		void beExecuted(const Bureaucrat& wagie);
+		void beExecuted(const Bureaucrat& wagie, std::string target);
 };
 
 #endif // PRESIDENTIALPARDONFORM_H
