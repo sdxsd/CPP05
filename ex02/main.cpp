@@ -10,24 +10,24 @@ int main(int argc, char *argv[]) {
 	try {
 		const Bureaucrat bob(argv[1], std::atoi(argv[2]));
 		PresidentialPardonForm form;
-
+		form.beSigned(bob);
 		form.beExecuted(bob);
-		// std::cout << bob << std::endl;
+		std::cout << bob << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
-		std::cout << "Grade too high exception." << std::endl;
-		return (1);
+		std::cout << gthe.GradeTooHigh() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException& gtle) {
-		std::cout << "Grade too low exception." << std::endl;
-		return (1);
+		std:: cout << gtle.GradeTooLow() << std::endl;
 	}
 	catch (AForm::GradeTooHighException& gthe) {
-		std::cout << "Grade too high exception (form)" << std::endl;
-		return (1);
+		std::cout << gthe.GradeTooHigh() << std::endl;
 	}
 	catch (AForm::GradeTooLowException& gtle) {
-		std::cout << "Grade too low exception (form)" << std::endl;
-		return (1);
+		std::cout << gtle.GradeTooLow() << std::endl;
 	}
+	catch (AForm::ExecutionWhileUnsignedException& ewus) {
+		std::cout << ewus.ExecWhileUnsigned() << std::endl;
+	}
+	return (1);
 }

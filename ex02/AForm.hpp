@@ -23,6 +23,10 @@ class AForm {
 			public:
 				std::string GradeTooLow(void);
 		};
+		class ExecutionWhileUnsignedException : std::exception {
+			public:
+				std::string ExecWhileUnsigned(void);
+		};
 		AForm(void);
 		AForm(std::string name, int signReq, int execReq);
 		AForm(const AForm& toCopy);

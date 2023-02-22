@@ -27,6 +27,10 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 void PresidentialPardonForm::beExecuted(Bureaucrat const & executor) {
-	if (czechCredentialsExec(executor) == 1)
+	if (czechCredentialsExec(executor) == 1 && isSigned == true) {
 		std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	}
+	else {
+		throw ExecutionWhileUnsignedException();
+	}
 }

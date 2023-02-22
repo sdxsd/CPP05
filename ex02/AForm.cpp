@@ -76,3 +76,7 @@ std::string AForm::GradeTooHighException::GradeTooHigh(void) {
 std::string AForm::GradeTooLowException::GradeTooLow(void) {
 	return ("AForm cannot be signed by anyone.");
 }
+
+std::string AForm::ExecutionWhileUnsignedException::ExecWhileUnsigned(void) {
+	return ("Uh oh... filing error....");
+}
