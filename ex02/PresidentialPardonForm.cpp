@@ -19,9 +19,6 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 void PresidentialPardonForm::beExecuted(Bureaucrat const & executor) {
-	if (executor.getGrade() <= reqExec)
+	if (czechCredentialsExec(executor) == 1)
 		std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-	else {
-		throw GradeTooLowException();
-	}
 }
