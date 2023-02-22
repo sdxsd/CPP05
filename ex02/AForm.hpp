@@ -29,10 +29,12 @@ class AForm {
 		virtual ~AForm(void);
 		AForm& operator=(const AForm& toCopy);
 		std::string getName(void) const;
-		int getReqSign(void) const;
-		int getReqExec(void) const;
-		bool getIsSigned(void) const;
-		void beSigned(const Bureaucrat& wagie);
+		int	getReqSign(void) const;
+		int	getReqExec(void) const;
+		bool	getIsSigned(void) const;
+		void	beSigned(const Bureaucrat& wagie);
+		int	czechCredentialsSign(Bureaucrat const& wagie);
+		int	czechCredentialsExec(Bureaucrat const& wagie);
 		virtual void beExecuted(Bureaucrat const& executor) = 0;
 };
 

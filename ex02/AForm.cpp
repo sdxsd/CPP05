@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 
 AForm::AForm(void):
-	formName("defaultAFormName"), reqSign(50), reqExec(10) {
+	formName("defaultFormName"), reqSign(50), reqExec(10) {
 	isSigned = false;
 }
 
@@ -53,6 +53,20 @@ void AForm::beSigned(const Bureaucrat& wagie) {
 		wagie.signForm(formName, reqSign);
 		throw GradeTooLowException();
 	}
+}
+
+int AForm::czechCredentialsExec(const Bureaucrat& wagie) {
+	if (wagie.getGrade() > reqSign)
+		throw GradeTooLowException();
+	else
+		return (1);
+}
+
+int AForm::czechCredentialsSign(const Bureaucrat& wagie) {
+	if (wagie.getGrade() > reqSign)
+		throw GradeTooLowException();
+	else
+		return (1);
 }
 
 std::string AForm::GradeTooHighException::GradeTooHigh(void) {
