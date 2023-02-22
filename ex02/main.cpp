@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
 	}
 	try {
 		const Bureaucrat bob(argv[1], std::atoi(argv[2]));
-		PresidentialPardonForm form;
+		PresidentialPardonForm form("Zjeop");
 		form.beSigned(bob);
 		form.beExecuted(bob);
 		std::cout << bob << std::endl;
