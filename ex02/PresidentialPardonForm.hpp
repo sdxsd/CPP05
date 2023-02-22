@@ -4,8 +4,6 @@
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm {
-		private:
-		std::string	target;
 		public:
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(const PresidentialPardonForm& toCopy);

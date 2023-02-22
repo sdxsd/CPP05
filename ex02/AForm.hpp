@@ -13,6 +13,7 @@ class AForm {
 		const int			reqSign;
 		const int			reqExec;
 		bool				isSigned;
+		std::string			target;
 	public:
 		class GradeTooHighException : std::exception  {
 			public:

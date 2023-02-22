@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
@@ -9,7 +9,10 @@ int main(int argc, char *argv[]) {
 	}
 	try {
 		const Bureaucrat bob(argv[1], std::atoi(argv[2]));
-		std::cout << bob << std::endl;
+		PresidentialPardonForm form;
+
+		form.beExecuted(bob);
+		// std::cout << bob << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << "Grade too high exception." << std::endl;
