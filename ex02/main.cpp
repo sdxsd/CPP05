@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {

@@ -3,6 +3,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 FILES = \
 		AForm.cpp \
+		ShrubberyCreationForm.cpp \
 		PresidentialPardonForm.cpp \
 		Bureaucrat.cpp \
 		main.cpp

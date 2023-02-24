@@ -29,8 +29,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (czechCredentialsExec(executor) == 1 && isSigned == true) {
-		std::ofstream shrubbery;
-		shrubbery.open(target + "_shrubbery");
+		std::ofstream	shrubbery;
+		std::string		fname = target + "_shrubbery";
+		shrubbery.open(fname.c_str());
 		if (shrubbery.fail() == false) {
 			shrubbery << "###" << std::endl
 					  << "###" << std::endl
