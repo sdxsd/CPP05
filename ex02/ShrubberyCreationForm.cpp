@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("Presidential Pardon Form", 145, 137) {
 	target = "barbary";
@@ -28,9 +29,22 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (czechCredentialsExec(executor) == 1 && isSigned == true) {
-		std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+		std::ofstream shrubbery;
+		shrubbery.open(target + "_shrubbery");
+		if (shrubbery.fail() == false) {
+			shrubbery << "###" << std::endl
+					  << "###" << std::endl
+					  << " | " << std::endl;
+			shrubbery.close();
+		}
+		else
+			throw GardeningFailureException();
 	}
 	else {
 		throw ExecutionWhileUnsignedException();
 	}
+}
+
+std::string ShrubberyCreationForm::GardeningFailureException::GardeningFailure(void) {
+	return ("Shrubbery creation failed.");
 }

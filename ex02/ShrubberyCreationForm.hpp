@@ -6,6 +6,10 @@
 
 class ShrubberyCreationForm : public AForm {
 		public:
+		class GardeningFailureException : std::exception {
+			public:
+				std::string GardeningFailure(void);
+		};
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(std::string targetName);
 		ShrubberyCreationForm(const ShrubberyCreationForm& toCopy);
