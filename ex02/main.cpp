@@ -13,7 +13,9 @@ int main(int argc, char *argv[]) {
 		PresidentialPardonForm form("Zoep Zoep");
 		form.beSigned(bob);
 		bob.executeForm(form);
-		std::cout << bob << std::endl;
+		ShrubberyCreationForm form_two;
+		form_two.beSigned(bob);
+		bob.executeForm(form_two);
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << gthe.GradeTooHigh() << std::endl;
@@ -29,6 +31,9 @@ int main(int argc, char *argv[]) {
 	}
 	catch (AForm::ExecutionWhileUnsignedException& ewus) {
 		std::cout << ewus.ExecWhileUnsigned() << std::endl;
+	}
+	catch (ShrubberyCreationForm::GardeningFailureException& gfe) {
+		std::cout << gfe.GardeningFailure() << std::endl;
 	}
 	return (1);
 }
