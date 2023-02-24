@@ -10,16 +10,16 @@ int main(int argc, char *argv[]) {
 		return (0);
 	}
 	try {
-		const Bureaucrat bob(argv[1], std::atoi(argv[2]));
+		const Bureaucrat wagie(argv[1], std::atoi(argv[2]));
 		PresidentialPardonForm form("Zoep Zoep");
-		form.beSigned(bob);
-		bob.executeForm(form);
+		form.beSigned(wagie);
+		wagie.executeForm(form);
 		ShrubberyCreationForm form_two;
-		form_two.beSigned(bob);
-		bob.executeForm(form_two);
+		form_two.beSigned(wagie);
+		wagie.executeForm(form_two);
 		RobotomyRequestForm form_three;
-		form_three.beSigned(bob);
-		bob.executeForm(form_three);
+		form_three.beSigned(wagie);
+		wagie.executeForm(form_three);
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << gthe.GradeTooHigh() << std::endl;
