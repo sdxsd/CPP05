@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
@@ -16,6 +17,9 @@ int main(int argc, char *argv[]) {
 		ShrubberyCreationForm form_two;
 		form_two.beSigned(bob);
 		bob.executeForm(form_two);
+		RobotomyRequestForm form_three;
+		form_three.beSigned(bob);
+		bob.executeForm(form_three);
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << gthe.GradeTooHigh() << std::endl;

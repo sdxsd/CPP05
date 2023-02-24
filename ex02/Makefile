@@ -5,6 +5,7 @@ FILES = \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
 		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
 		Bureaucrat.cpp \
 		main.cpp
 OFILES = $(FILES:.cpp=.o)
