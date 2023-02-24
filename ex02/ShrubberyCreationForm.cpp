@@ -1,8 +1,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("Presidential Pardon Form", 145, 137) {
-	target = "barbary";
+ShrubberyCreationForm::ShrubberyCreationForm(void): AForm("Shrubbery Creation Form", 145, 137) {
+	target = "generic_garden";
 	isSigned = false;
 }
 
@@ -32,6 +32,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		std::ofstream	shrubbery;
 		std::string		fname = target + "_shrubbery";
 		shrubbery.open(fname.c_str());
+		std::cout << fname << " has been planted." << std::endl;
 		if (shrubbery.fail() == false) {
 			shrubbery << "###" << std::endl
 					  << "###" << std::endl
