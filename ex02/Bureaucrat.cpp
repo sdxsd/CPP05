@@ -60,6 +60,6 @@ void Bureaucrat::signForm(const std::string& formName, int reqGrade) const {
 		std::cout << name << " couldn't sign " << formName << " because grade was too low." << std::endl;
 }
 
-void Bureaucrat::executeForm(AForm const & form) {
+void Bureaucrat::executeForm(AForm const & form) const {
 	form.execute(*this);
 }

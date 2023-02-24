@@ -9,9 +9,9 @@ int main(int argc, char *argv[]) {
 	}
 	try {
 		const Bureaucrat bob(argv[1], std::atoi(argv[2]));
-		PresidentialPardonForm form("Zjeop");
+		PresidentialPardonForm form("Zoep Zoep");
 		form.beSigned(bob);
-		form.execute(bob);
+		bob.executeForm(form);
 		std::cout << bob << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {

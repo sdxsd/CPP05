@@ -70,13 +70,13 @@ int AForm::czechCredentialsSign(const Bureaucrat& wagie) const {
 }
 
 std::string AForm::GradeTooHighException::GradeTooHigh(void) {
-	return ("AForm needs to be signed by someone.");
+	return ("GradeTooHighException");
 }
 
 std::string AForm::GradeTooLowException::GradeTooLow(void) {
-	return ("AForm cannot be signed by anyone.");
+	return ("GradeTooLowException");
 }
 
 std::string AForm::ExecutionWhileUnsignedException::ExecWhileUnsigned(void) {
-	return ("Uh oh... filing error....");
+	return ("ExecutionWhileUnsignedException");
 }

@@ -29,7 +29,7 @@ class Bureaucrat {
 		void	incGrade(void);
 		void	decGrade(void);
 		void	signForm(const std::string& formName, int reqGrade) const;
-		void	executeForm(AForm const & form);
+		void	executeForm(AForm const & form) const;
 };
 
 std::ostream&	operator<<(std::ostream& os, const Bureaucrat& toPrint);
