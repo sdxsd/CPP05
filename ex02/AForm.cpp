@@ -55,14 +55,14 @@ void AForm::beSigned(const Bureaucrat& wagie) {
 	}
 }
 
-int AForm::czechCredentialsExec(const Bureaucrat& wagie) {
-	if (wagie.getGrade() > reqSign)
+int AForm::czechCredentialsExec(const Bureaucrat& wagie) const {
+	if (wagie.getGrade() > reqExec)
 		throw GradeTooLowException();
 	else
 		return (1);
 }
 
-int AForm::czechCredentialsSign(const Bureaucrat& wagie) {
+int AForm::czechCredentialsSign(const Bureaucrat& wagie) const {
 	if (wagie.getGrade() > reqSign)
 		throw GradeTooLowException();
 	else

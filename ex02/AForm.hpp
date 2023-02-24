@@ -37,9 +37,9 @@ class AForm {
 		int	getReqExec(void) const;
 		bool	getIsSigned(void) const;
 		void	beSigned(const Bureaucrat& wagie);
-		int	czechCredentialsSign(Bureaucrat const& wagie);
-		int	czechCredentialsExec(Bureaucrat const& wagie);
-		virtual void beExecuted(Bureaucrat const& executor) = 0;
+		int	czechCredentialsSign(Bureaucrat const& wagie) const;
+		int	czechCredentialsExec(Bureaucrat const& wagie) const;
+		virtual void execute(Bureaucrat const& executor) const = 0;
 };
 
 #endif // AFORM_H

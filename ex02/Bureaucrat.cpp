@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(std::string title, int level): name(title)  {
 	if (level < TOP_GRADE)
@@ -57,4 +58,8 @@ void Bureaucrat::signForm(const std::string& formName, int reqGrade) const {
 		std::cout << name << " signed " << formName << std::endl;
 	else if (grade > reqGrade)
 		std::cout << name << " couldn't sign " << formName << " because grade was too low." << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const & form) {
+	form.execute(*this);
 }

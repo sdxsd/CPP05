@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+class AForm;
+
 #define LOWEST_GRADE 150
 #define TOP_GRADE 1
 
