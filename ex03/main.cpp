@@ -2,6 +2,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
@@ -10,16 +11,23 @@ int main(int argc, char *argv[]) {
 		return (0);
 	}
 	try {
-		const Bureaucrat wagie(argv[1], std::atoi(argv[2]));
-		PresidentialPardonForm form("Zoep Zoep");
-		form.beSigned(wagie);
-		wagie.executeForm(form);
-		ShrubberyCreationForm form_two;
-		form_two.beSigned(wagie);
-		wagie.executeForm(form_two);
-		RobotomyRequestForm form_three;
-		form_three.beSigned(wagie);
-		wagie.executeForm(form_three);
+		AForm				*form[4];
+		Intern				Harold;
+		const Bureaucrat	wagie(argv[1], std::atoi(argv[2]));
+
+		form[0] = Harold.makeForm("Shrubbery Creation Form", "Znonk");
+		form[1] = Harold.makeForm("Presidential Pardon Form", "Edward Snowden");
+		form[2] = Harold.makeForm("Robotomy Request Form", "Mark Zuckerberg");
+		form[3] = Harold.makeForm("Invalid Form Name", "Sneaky Pete");
+		for (int i = 0; i < 4; i++) {
+			if (form[i] != NULL) {
+				form[i]->beSigned(wagie);
+				wagie.executeForm(*form[i]);
+				delete form[i];
+			}
+			else
+				std::cout << "Invalid form detected. Intern fired!" << std::endl;;
+		}
 	}
 	catch (Bureaucrat::GradeTooHighException& gthe) {
 		std::cout << gthe.GradeTooHigh() << std::endl;

@@ -7,19 +7,19 @@ Intern::Intern(void) {
 	;
 }
 
-Intern::Intern(const Intern& toCopy) {
-	;
-}
+// Intern::Intern(const Intern& toCopy) {
+// 	;
+// }
 
 Intern::~Intern(void) {
 	;
 }
 
-Intern& Intern::operator=(const Intern& toCopy) {
-	return (*this);
-}
+// Intern& Intern::operator=(const Intern& toCopy) {
+// 	return (*this);
+// }
 
-AForm *makeForm(std::string formName, std::string targetName) {
+AForm *Intern::makeForm(std::string formName, std::string targetName) {
 	AForm *choice = NULL;
 	AForm *forms[3] = {
 		new ShrubberyCreationForm(targetName),
@@ -33,6 +33,8 @@ AForm *makeForm(std::string formName, std::string targetName) {
 			delete forms[i];
 	}
 	if (choice == NULL)
-		std::cerr << "Form specified does not exist." << std::endl;
+		std::cerr << "Intern cannot create form of type " << formName << std::endl;
+	else
+		std::cout << "Intern creates " << choice->getName() << std::endl;
 	return (choice);
 }
