@@ -4,11 +4,12 @@
 #include "AForm.hpp"
 
 class Intern {
+	private:
+		Intern(const Intern& toCopy);
+		Intern& operator=(const Intern& toCopy);
 	public:
 		Intern(void);
-		// Intern(const Intern& toCopy);
 		~Intern(void);
-		// Intern& operator=(const Intern& toCopy);
 		AForm *makeForm(std::string formName, std::string targetName);
 };
 

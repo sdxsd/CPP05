@@ -3,22 +3,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-Intern::Intern(void) {
-	;
-}
-
-// Intern::Intern(const Intern& toCopy) {
-// 	;
-// }
-
-Intern::~Intern(void) {
-	;
-}
-
-// Intern& Intern::operator=(const Intern& toCopy) {
-// 	return (*this);
-// }
-
 AForm *Intern::makeForm(std::string formName, std::string targetName) {
 	AForm *choice = NULL;
 	AForm *forms[3] = {

@@ -5,6 +5,9 @@
 #include "Intern.hpp"
 #include <stdlib.h>
 
+Intern::Intern(void) {;}
+Intern::~Intern(void) {;}
+
 int main(int argc, char *argv[]) {
 	AForm				*form[4];
 	Intern				Harold;
