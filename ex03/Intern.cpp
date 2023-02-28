@@ -20,7 +20,7 @@ Intern& Intern::operator=(const Intern& toCopy) {
 }
 
 AForm *makeForm(std::string formName, std::string targetName) {
-	AForm *choice;
+	AForm *choice = NULL;
 	AForm *forms[3] = {
 		new ShrubberyCreationForm(targetName),
 		new PresidentialPardonForm(targetName),
@@ -33,5 +33,7 @@ AForm *makeForm(std::string formName, std::string targetName) {
 		else
 			delete forms[i];
 	}
+	if (choice == NULL)
+		std::cerr << "Form specified does not exist." << std::endl;
 	return (choice);
 }
