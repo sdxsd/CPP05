@@ -28,7 +28,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (czechCredentialsExec(executor) == 1 && isSigned == true) {
+	if (czechCredentialsExec(executor) == true && isSigned == true) {
 		std::ofstream	shrubbery;
 		std::string		fname = target + "_shrubbery";
 		shrubbery.open(fname.c_str());
@@ -42,9 +42,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		else
 			throw GardeningFailureException();
 	}
-	else {
+	else
 		throw ExecutionWhileUnsignedException();
-	}
 }
 
 std::string ShrubberyCreationForm::GardeningFailureException::GardeningFailure(void) {
