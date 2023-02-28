@@ -27,9 +27,8 @@ AForm *makeForm(std::string formName, std::string targetName) {
 		new RobotomyRequestForm(targetName)
 	};
 	for (int i = 0; i < 3; i++) {
-		if (forms[i]->getName() == formName) {
+		if (forms[i]->getName() == formName)
 			choice = forms[i];
-		}
 		else
 			delete forms[i];
 	}
