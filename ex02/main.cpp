@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-	if (argc < 3) {
+	if (argc != 3) {
 		std::cout << "Enter name and grade please. " << std::endl;
 		return (0);
 	}
